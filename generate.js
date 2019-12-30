@@ -86,10 +86,10 @@ function layoutTableCells(defaultCustomLength) {
         document.write('<td>#</td> <td>半角英数記号</td> <td>半角英数</td> <td>数字</td>\n');
         document.write('</tr>\n');
 	document.write("<tr>");
-	document.write("<td><input maxlength='3' id='customLen' class='select-on-click' value='"+defaultCustomLength+"' onkeyup='regenerate()'>文字</td>\n");
+	document.write("<td><input maxlength='3' style='width:50px' id='customLen' class='select-on-click' value='"+defaultCustomLength+"' onkeyup='regenerate()' >文字</td>\n");
 	for(var x = 0; x < generators.length; x++){
 		document.write("<td>");
-		document.write('<input type="text" id="custom_' + x + '" class="copy-on-click" value="" readonly>');
+		document.write('<input type="text" id="custom_' + x + '" class="copy-on-click form-control" value="" readonly>');
 		document.write("</td>\n");
 	}
 	document.write("</tr>\n");
@@ -100,7 +100,7 @@ function layoutTableCells(defaultCustomLength) {
 		document.write("<td>"+length+"文字</td>\n");
 		for(var x = 0; x < generators.length; x++){
 			document.write("<td>");
-			document.write('<input type="text" class="copy-on-click" id="input_' + y + '_'  + x + '" readonly>');
+			document.write('<input type="text" class="copy-on-click form-control" id="input_' + y + '_'  + x + '" readonly>');
 			document.write("</td>\n");
 		}
 		document.write("</tr>\n");
@@ -117,8 +117,6 @@ function layoutTableCells(defaultCustomLength) {
         	$('#snackbar').show();
         	setTimeout(function(){ $('#snackbar').fadeOut(500); },1000);
 	});
-
-	document.write("<div class='col text-center snackbar-container'><div id='snackbar' class='alert alert-success' style='display:none;' role='alert'>クリップボードにコピーしました</div></div>");
 
 	regenerate();
 }

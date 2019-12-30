@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-
-<title>ランダム文字生成</title>
-
+	<head>
+		<meta charset="UTF-8"> 
+		<title>
+			ランダムなパスワードを瞬時に作成します 
+		</title>
 <!-- bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+		</script>
 <!-- /bootstrap -->
+		<script type="text/javascript" src="generate.js">
+		</script>
+		<style>
+			.snackbar-container {
+			margin-top: 150px;
+			position: fixed;
+			bottom: 1rem;
+			z-index: 9999;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<main>
+			<nav class="navbar navbar-dark bg-dark">
+				<span class="navbar-brand">
+					瞬間パスワード 
+				</span>
+			</nav>
+			
+	
+	        <div class="container">
+	        <div id="snackbar" class="sticky-top  text-center snackbar-container" style="display: none;width:80%">
+				<div class="alert alert-success " role="alert">
+					クリップボードにコピーしました
+				</div>
+			</div>
+			<script>
+				layoutTableCells(108);
+			</script>
+			<div class="col text-center">
+				<button class="btn btn-primary btn-lg btn-block" onclick="regenerate()">
+					更新 
+				</button>
 
-<script type="text/javascript" src="generate.min.js"></script>
+            <p>好きな桁数のパスワードをクリックしてコピーできます。</p>
+			</div>
+			
+        </div>
+このページを開くと瞬時にパスワードが作成されます。 
+ブックマークがオススメ 
+		</main>
+		<footer>
+			要望・追加機能は「プルリクエスト」にて 
 
-<style>
-.snackbar-container {
-  position: fixed;
-  bottom: 1rem;
-  z-index: 9999;
-}
-</style>
-</head>
-<body>
-<nav class="navbar navbar-dark bg-dark">
-	<span class="navbar-brand">瞬間パスワード</span>
-</nav>
-<script>
-	layoutTableCells(108);
-</script>
-<div class="col text-center">
-	<button class="btn btn-primary btn-lg"  onclick="regenerate()">更新</button>
-</div>
-
-</body>
+		</footer>
+	</body>
 </html>
-
